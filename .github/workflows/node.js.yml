@@ -10,22 +10,21 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout branch from repo
-    - uses: actions/checkout@v4
-    
-    - name: Set up node
-      uses: actions/setup-node@v3
-      with:
-        node-version: 14.x
-        cache: 'npm'
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Build project
-      run: npm run build
+      - name: Checkout branch from repo
+      - uses: actions/checkout@v4
+      
+      - name: Set up node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14.x
+          cache: 'npm'
+  
+      - name: Install dependencies
+        run: npm install
+  
+      - name: Build project
+        run: npm run build
       
