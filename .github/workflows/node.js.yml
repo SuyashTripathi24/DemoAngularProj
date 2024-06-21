@@ -3,20 +3,19 @@ name: Build Angular App
 
 on:
   push:
-    branches: ["main"]
+    branches: [ "main" ]
   pull_request:
-    branches: ["main"]
+    branches: [ "main" ]
 
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout branch from repo
+    steps:    
       - uses: actions/checkout@v4
       
-      - name: Set up node
+      - name: Setup node
         uses: actions/setup-node@v3
         with:
           node-version: 14.x
