@@ -26,4 +26,28 @@ jobs:
   
       - name: Build project
         run: npm run build
+
+      - name: Step 4 - List out from current directory
+        run: ls -a
+
+      - name: Step 5 - Target Folder location
+        run: |
+          cd dist
+          ls -a 
+
+
+
+  # publish-job:
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   steps:
+  #   - uses: actions/checkout@v4
+  #   - uses: actions/setup-node@v3
+  #     with:
+  #       node-version: 14.x
+  #       cache: 'npm'
+  #   - uses: actions/upload-artifact@v3
+  #     with:
+  #       name: Package
+  #       path: staging
       
